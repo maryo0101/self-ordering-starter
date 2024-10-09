@@ -6,8 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Arr;
-use Revolution\Line\Notifications\LineNotifyChannel;
-use Revolution\Line\Notifications\LineNotifyMessage;
+use Revolution\Line\Notifications\LineChannel;
+use Revolution\Line\Notifications\LineMessage;
 use Revolution\Ordering\Contracts\Payment\PaymentMethodFactory;
 use Revolution\Ordering\Events\OrderEntry;
 
@@ -88,7 +88,7 @@ class OrderEntryNotification extends Notification
     {
         return [
             //'mail',
-            //LineNotifyChannel::class,
+            //LineChannel::class,
         ];
     }
 
@@ -109,7 +109,7 @@ class OrderEntryNotification extends Notification
             ->line($this->order_items);
     }
 
-    public function toLineNotify(object $notifiable): LineNotifyMessage
+    public function toLine(object $notifiable): LineMessage
     {
         $message = collect([
             '',
@@ -121,7 +121,7 @@ class OrderEntryNotification extends Notification
             '◆注文◆'.PHP_EOL.$this->order_items,
         ])->implode(PHP_EOL.PHP_EOL);
 
-        return LineNotifyMessage::create($message);
+        return LineMessage::create($message);
     }
 
     /**
