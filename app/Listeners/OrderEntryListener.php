@@ -25,7 +25,7 @@ class OrderEntryListener
         info($event->table.' : '.$event->memo, $event->items);
         info('options', $event->options);
 
-//        Notification::route('line', '')
-//                    ->notify(new OrderEntryNotification($event));
+        Notification::route('line', 'ryoma.1010')
+                    ->notify(new OrderEntryNotification($event));
     }
 }
