@@ -2,6 +2,7 @@
     "regions": [
         "hnd1"
     ],
+    "buildCommand": "composer install && php artisan config:clear && php artisan config:cache",
     "builds": [
         {
             "src": "/api/index.php",
