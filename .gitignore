@@ -1,0 +1,40 @@
+# Laravel/PHP関連
+/vendor/
+/node_modules/
+/public/storage
+/storage/*.key
+/storage/logs/*
+/.phpunit.cache
+/.phpunit.result.cache
+
+# 環境設定ファイル
+.env
+.env.backup
+.env.production
+
+# ログファイル
+npm-debug.log*
+yarn-error.log*
+
+# OS/エディタ関連
+.DS_Store
+Thumbs.db
+/.idea/
+/.vscode/
+/.fleet/
+
+# ビルド・キャッシュ
+/public/hot
+/public/build
+
+# Homestead/Vagrant関連
+Homestead.yaml
+# Homestead.json
+
+# DBファイル（SQLiteなど）
+*.sqlite
+
+# その他
+#auth.json
+
+
