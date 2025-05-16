@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Revolution\Ordering\Contracts\Menu\MenuData;
+use App\Services\Menu\DatabaseMenu;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->scoped(MenuData::class, DatabaseMenu::class);
     }
 
     /**

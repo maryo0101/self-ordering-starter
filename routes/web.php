@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminMenuController;
 use App\Http\Controllers\Admin\AdminOrderController;
+use App\Livewire\Ordering\Menus;
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,5 +37,7 @@ Route::middleware(['auth'])->group(function () {
 // ログインフォーム用
 Route::get('/custom-login', [LoginController::class, 'showLoginForm'])->name('custom.login.form');
 Route::post('/custom-login', [LoginController::class, 'login'])->name('custom.login');
+
+Route::get('/order', Menus::class)->name('order');
 
 require __DIR__ . '/auth.php';

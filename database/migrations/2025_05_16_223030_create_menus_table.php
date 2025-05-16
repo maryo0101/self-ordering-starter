@@ -1,0 +1,27 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateMenusTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('menus', function (Blueprint $table) {
+            $table->id(); // id
+            $table->string('name'); // メニュー名
+            $table->text('text')->nullable(); // 説明文
+            $table->integer('price'); // 価格（整数）
+            $table->string('category'); // カテゴリー
+            $table->string('image')->nullable(); // 画像URL
+            $table->timestamp('sold_out_until')->nullable(); // 売り切れ期限
+            $table->timestamps(); // created_at, updated_at
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('menus');
+    }
+}
