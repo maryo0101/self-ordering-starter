@@ -10,7 +10,7 @@ class Menu extends Model
         'name',
         'price',
         'category',
-        'text',          // 説明文
+        'description',          // 説明文
         'image',         // 画像URL
         'sold_out_until' // 売り切れ期限
     ];

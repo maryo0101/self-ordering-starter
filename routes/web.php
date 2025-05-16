@@ -38,6 +38,4 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/custom-login', [LoginController::class, 'showLoginForm'])->name('custom.login.form');
 Route::post('/custom-login', [LoginController::class, 'login'])->name('custom.login');
 
-Route::get('/order', Menus::class)->name('order');
-
 require __DIR__ . '/auth.php';

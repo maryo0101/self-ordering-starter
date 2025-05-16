@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
-                <form action="{{ route('admin.menu.store') }}" method="POST">
+                <form action="{{ route('admin.menu.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="mb-4">
@@ -29,6 +29,11 @@
                     <div class="mb-4">
                         <label class="block text-gray-700 dark:text-white">説明 (任意)</label>
                         <textarea name="description" class="w-full p-2 rounded"></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="image">画像</label>
+                        <input type="file" name="image" id="image" accept="image/*">
                     </div>
 
                     <div>

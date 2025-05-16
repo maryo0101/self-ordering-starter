@@ -16,7 +16,7 @@ class DatabaseMenu implements MenuData
                 'name' => $item->name,
                 'price' => $item->price,
                 'category' => $item->category,
-                'text' => $item->text ?? '',
+                'text' => $item->description ?? '',
                 'image' => $item->image ? asset('images/' . $item->image) : null,
                 'sold_out_until' => $item->sold_out_until,
             ];

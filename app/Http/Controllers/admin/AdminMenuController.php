@@ -20,13 +20,23 @@ class AdminMenuController extends Controller
             'price' => 'required|integer',
             'category' => 'required|string|max:255',
             'description' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        Menu::create($request->all());
+        $imageName = null;
+        if ($request->hasFile('image')) {
+            $imageName = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('images'), $imageName);
+        }
+
+        Menu::create([
+            'name' => $request->name,
+            'price' => $request->price,
+            'category' => $request->category,
+            'description' => $request->description,
+            'image' => $imageName,
+        ]);
 
         return redirect()->route('admin.menu.create')->with('success', 'メニューが追加されました');
     }
 }
-
-
-
