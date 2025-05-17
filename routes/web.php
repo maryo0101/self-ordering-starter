@@ -38,4 +38,8 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/custom-login', [LoginController::class, 'showLoginForm'])->name('custom.login.form');
 Route::post('/custom-login', [LoginController::class, 'login'])->name('custom.login');
 
+Route::get('/test-laravel', function () {
+    return 'Laravel is working';
+});
+
 require __DIR__ . '/auth.php';
