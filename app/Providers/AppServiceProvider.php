@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Vite;
 use Revolution\Ordering\Contracts\Menu\MenuData;
 use App\Services\Menu\DatabaseMenu;
 
@@ -21,6 +22,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Vite::useBuildDirectory('.vite');
     }
 }
