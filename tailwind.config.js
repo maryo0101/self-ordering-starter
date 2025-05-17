@@ -15,12 +15,18 @@ export default {
     theme: {
         extend: {
             colors: {
+                primary: {
+                    500: '#f97316',
+                    600: '#ea580c',
+                    700: '#c2410c',
+                },
                 orange: {
-                    500: '#f97316',  // オレンジ色
-                    600: '#ea580c',  // ホバー時に使うオレンジ色
-                    700: '#c2410c',  // アクティブ時に使うオレンジ色
+                    500: '#f97316',
+                    600: '#ea580c',
+                    700: '#c2410c',
                 },
             },
+
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
