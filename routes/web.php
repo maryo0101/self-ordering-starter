@@ -42,4 +42,10 @@ Route::get('/test-laravel', function () {
     return 'Laravel is working';
 });
 
+// routes/web.php に追加
+Route::get('/vendor-check', function () {
+    return file_exists(base_path('vendor/autoload.php')) ? 'vendor exists' : 'vendor missing';
+});
+
+
 require __DIR__ . '/auth.php';
