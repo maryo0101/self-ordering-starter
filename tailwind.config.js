@@ -8,6 +8,7 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.js', // ← これを追加！
+        './vendor/revolution/self-ordering/resources/views/**/*.blade.php'
     ],
 
 
