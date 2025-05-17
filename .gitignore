@@ -25,7 +25,7 @@ Thumbs.db
 
 # ビルド・キャッシュ
 /public/hot
-/public/build
+#/public/build
 
 # Homestead/Vagrant関連
 Homestead.yaml
