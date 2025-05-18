@@ -3,7 +3,6 @@
         "hnd1"
     ],
     "buildCommand": "composer install && npm install && npm run build && php artisan config:clear && php artisan config:cache",
-
     "builds": [
         {
             "src": "/api/index.php",
@@ -46,11 +45,10 @@
         "APP_ROUTES_CACHE": "/tmp/routes.php",
         "APP_SERVICES_CACHE": "/tmp/services.php",
         "DB_CONNECTION": "pgsql",
-        "DB_HOST": "127.0.0.1",
+        "DB_HOST": "dpg-d0k7mpggjchc73a6np3g-a.singapore-postgres.render.com",
         "DB_PORT": "5432",
         "DB_DATABASE": "itoshimadb",
         "DB_USERNAME": "itoshima",
-        "DB_PASSWORD": "itoshima",
         "CACHE_DRIVER": "array",
         "CACHE_STORE": "array",
         "LOG_CHANNEL": "stderr",
